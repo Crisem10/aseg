@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Lista de Boletos</title>
+</head>
+<body>
+    <header>
+        <h1>Boletos de Avión</h1>
+        <nav>
+            <a href="/agregar_cliente">Agregar Cliente</a>
+            <a href="/agregar_vuelo">Agregar Vuelo</a>
+            <a href="/comprar_boleto">Comprar Boleto</a>
+        </nav>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Boleto</th>
+                    <th>Cliente</th>
+                    <th>Vuelo</th>
+                    <th>Fecha Salida</th>
+                    <th>Fecha Llegada</th>
+                    <th>Precio</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for boleto in boletos %}
+                <tr>
+                    <td>{{ boleto.boleto_id }}</td>
+                    <td>{{ boleto.nombre }} {{ boleto.apellido }}</td>
+                    <td>{{ boleto.origen }} -> {{ boleto.destino }}</td>
+                    <td>{{ boleto.fecha_salida }}</td>
+                    <td>{{ boleto.fecha_llegada }}</td>
+                    <td>{{ boleto.precio }}</td>
+                    <td>{{ boleto.estado }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

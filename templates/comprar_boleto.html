@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Comprar Boleto</title>
+</head>
+<body>
+    <header>
+        <h1>Comprar Boleto</h1>
+    </header>
+    <main>
+        <form method="POST">
+            <label for="cliente_id">Cliente:</label>
+            <select id="cliente_id" name="cliente_id" required>
+                {% for cliente in clientes %}
+                <option value="{{ cliente.id }}">{{ cliente.nombre_completo }}</option>
+                {% endfor %}
+            </select>
+            
+            <label for="vuelo_id">Vuelo:</label>
+            <select id="vuelo_id" name="vuelo_id" required>
+                {% for vuelo in vuelos %}
+                <option value="{{ vuelo.id }}">{{ vuelo.vuelo_info }}</option>
+                {% endfor %}
+            </select>
+            
+            <button type="submit">Comprar</button>
+        </form>
+    </main>
+</body>
+</html>

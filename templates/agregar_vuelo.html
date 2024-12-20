@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Agregar Vuelo</title>
+</head>
+<body>
+    <header>
+        <h1>Agregar Vuelo</h1>
+    </header>
+    <main>
+        <form method="POST">
+            <label for="origen">Origen:</label>
+            <input type="text" id="origen" name="origen" required>
+            
+            <label for="destino">Destino:</label>
+            <input type="text" id="destino" name="destino" required>
+            
+            <label for="fecha_salida">Fecha de Salida:</label>
+            <input type="datetime-local" id="fecha_salida" name="fecha_salida" required>
+            
+            <label for="fecha_llegada">Fecha de Llegada:</label>
+            <input type="datetime-local" id="fecha_llegada" name="fecha_llegada" required>
+            
+            <label for="precio">Precio:</label>
+            <input type="number" step="0.01" id="precio" name="precio" required>
+            
+            <button type="submit">Agregar</button>
+        </form>
+    </main>
+</body>
+</html>
